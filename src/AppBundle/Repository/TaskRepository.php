@@ -10,4 +10,15 @@ namespace AppBundle\Repository;
  */
 class TaskRepository extends \Doctrine\ORM\EntityRepository
 {
+
+
+    public function  getTasks()
+    {
+
+        return $this->createQueryBuilder('t')
+            ->select('t')
+            ->andWhere('where t.status = "open" ')
+            ->getQuery()
+            ->getResult();
+    }
 }
