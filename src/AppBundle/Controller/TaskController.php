@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 
+use AppBundle\Form\TaskType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -14,14 +15,20 @@ use AppBundle\Entity\Category;
 class TaskController extends Controller
 {
     /**
-     * @Route("/az", name="app_task_add", methods={"GET"})
+     * @Route("/addtask", name="app_task_add", methods={"GET"})
      *
      * @return \Symfony\Component\HttpFoundation\Response)
      */
     public function addAction(Request $request)
     {
+        $task=$this->get('app.task.manager')->create();
+        $form = $this->createForm(TaskType::class, $task);
 
-        return "bla";
+        return $this->render(':task:new.html.twig', [
+            'form' => $form->createView(),
+            'categories' => $this->get('app.category.manager')->all(),
+
+        ]);
 
     }
 }
