@@ -1,0 +1,30 @@
+{% extends "::base.html.twig" %}
+
+{%  block title 'Trello' %}
+
+{%  block header  %}
+    <h1>Vos tâches</h1>
+{% endblock %}
+
+{% block content %}
+    {% for category in categories %}
+        <div class="col-lg-3">
+            <h2> {{  category.name }} <span class="badge"> {{  category.tasks | length }}</span></h2>
+            {% for  task in category.tasks %}
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p> {{  task.description }} </p>
+                </div>
+            </div>
+
+
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
+
+
+
+

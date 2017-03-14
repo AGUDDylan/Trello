@@ -49,48 +49,29 @@ class Task
 
     /**
      * @ORM\ManyToOne(
-     * targetEntity="AppBundle\Entity\Task",
+     * targetEntity="AppBundle\Entity\Category",
      * inversedBy="tasks"
      *)
      */
     private $category;
 
-
-
-
-
-
-
     /**
-     * Get id
-     *
      * @return int
      */
-
-
-
     public function getId()
     {
         return $this->id;
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Task
+     * @param int $id
      */
-    public function setName($name)
+    public function setId($id)
     {
-        $this->name = $name;
-
-        return $this;
+        $this->id = $id;
     }
 
     /**
-     * Get name
-     *
      * @return string
      */
     public function getName()
@@ -99,22 +80,14 @@ class Task
     }
 
     /**
-     * Set description
-     *
-     * @param string $description
-     *
-     * @return Task
+     * @param string $name
      */
-    public function setDescription($description)
+    public function setName($name)
     {
-        $this->description = $description;
-
-        return $this;
+        $this->name = $name;
     }
 
     /**
-     * Get description
-     *
      * @return string
      */
     public function getDescription()
@@ -122,24 +95,15 @@ class Task
         return $this->description;
     }
 
-
     /**
-     * Set status
-     *
-     * @param string $status
-     *
-     * @return Task
+     * @param string $description
      */
-    public function setStatus($status)
+    public function setDescription($description)
     {
-        $this->status = $status;
-
-        return $this;
+        $this->description = $description;
     }
 
     /**
-     * Get status
-     *
      * @return string
      */
     public function getStatus()
@@ -148,27 +112,32 @@ class Task
     }
 
     /**
-     * Set status
-     *
      * @param string $status
-     *
-     * @return Task
      */
-    public function setCategory($category)
+    public function setStatus($status)
     {
-        $this->category = $category;
-
-        return $this;
+        $this->status = $status;
     }
 
     /**
-     * Get status
-     *
-     * @return string
+     * @return mixed
      */
     public function getCategory()
     {
         return $this->category;
     }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+
+
+
+
 }
 

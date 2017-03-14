@@ -24,6 +24,23 @@ class LoadTaskData extends AbstractFixture implements OrderedFixtureInterface
                 'category'=> $this->getReference('category-1'),
 
             ],
+
+            [
+                'name' =>'Une tache 3',
+                'description'=>'Connaitre Symfony',
+                'status'=>Task::CONST_STATUS_OPEN,
+                'category'=> $this->getReference('category-3'),
+
+            ],
+
+
+            [
+                'name' =>'Une tache 4',
+                'description'=>'Réunion',
+                'status'=>Task::CONST_STATUS_OPEN,
+                'category'=> $this->getReference('category-2'),
+
+            ],
         ];
         foreach ($datas as $i => $data) {
             $task = new Task();
@@ -44,9 +61,3 @@ class LoadTaskData extends AbstractFixture implements OrderedFixtureInterface
     }
 }
 
-
- /**'Installer le frigo',
-   'Truc super important',
-    'Reunion',
-    Apprendre le framework Symfony'
-  **/
