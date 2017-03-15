@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cbd66c93-2f2a-470e-b265-b0d0ae28a1c4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/task/list.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/task/list.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/task/update.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/task/update.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/TaskController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/TaskController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Manager/TaskManager.php" afterPath="$PROJECT_DIR$/src/AppBundle/Manager/TaskManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/TaskRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/TaskRepository.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -736,12 +731,12 @@
       <workItem from="1489500283625" duration="4306000" />
       <workItem from="1489504649760" duration="433000" />
       <workItem from="1489505132136" duration="4047000" />
-      <workItem from="1489565037136" duration="9373000" />
+      <workItem from="1489565037136" duration="9418000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32556000" />
+    <option name="totallyTimeSpent" value="32601000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
