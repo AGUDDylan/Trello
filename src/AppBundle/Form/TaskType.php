@@ -4,6 +4,9 @@ namespace AppBundle\Form;
 
 use AppBundle\Controller\TaskController;
 use AppBundle\Entity\Task;
+use Doctrine\ORM\Mapping\Entity;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Bundle\FrameworkBundle\Tests\Fixtures\Validation\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -21,19 +24,15 @@ class TaskType extends AbstractType
         $builder->add('name')
             ->add('description', TextareaType::class)
             ->add('status', ChoiceType::class, [
-                'choices' => [
-                    Task::CONST_STATUS_OPEN=>Task::CONST_STATUS_OPEN,
-                    Task::CONST_STATUS_CLOSED=>Task::CONST_STATUS_CLOSED,
-
-                ],
+                'choices' => array(
+                    Task::CONST_STATUS_OPEN => Task::CONST_STATUS_OPEN,
+                    Task::CONST_STATUS_CLOSED => Task::CONST_STATUS_CLOSED,
+                ),
             ])
-            ->add('category', ChoiceType::class, [
-                'choices' => [
-
-
-
-                ],
-    ]);
+            ->add('category', EntityType::class, array(
+                'class' =>\AppBundle\Entity\Category::class,
+                'choice_label' => 'name',
+        ));
 
     }
 

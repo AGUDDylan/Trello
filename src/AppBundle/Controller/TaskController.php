@@ -15,7 +15,7 @@ use AppBundle\Entity\Category;
 class TaskController extends Controller
 {
     /**
-     * @Route("/addtask", name="app_task_add", methods={"GET"})
+     * @Route("/addtask", name="app_task_add", methods={"GET","POST"})
      *
      * @return \Symfony\Component\HttpFoundation\Response)
      */
@@ -24,11 +24,49 @@ class TaskController extends Controller
         $task=$this->get('app.task.manager')->create();
         $form = $this->createForm(TaskType::class, $task);
 
+        if ($request->isMethod('POST')) {
+            $form->handleRequest($request);
+            if ($form->isValid()) {
+                $this->get('app.task.manager')->save($task);
+
+                return $this->redirectToRoute('app_task_list');
+
+            }
+        }
+
+
         return $this->render(':task:new.html.twig', [
             'form' => $form->createView(),
-            'categories' => $this->get('app.category.manager')->all(),
+
 
         ]);
 
     }
+
+
+    /**
+     * @Route("/updatetask", name="app_task_update", methods={"GET","POST"})
+     *
+     * @return \Symfony\Component\HttpFoundation\Response)
+     */
+
+
+    public function updateAction(Request $request)
+    {
+        $task=$this->get('app.task.manager')->create();
+        $form = $this->createForm(TaskType::class, $task);
+
+
+
+        return $this->render(':task:update.html.twig', [
+            'form' => $form->createView(),
+
+
+        ]);
+
+    }
+
+
+
+
 }

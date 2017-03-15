@@ -9,10 +9,12 @@ class LoadCategoryData extends AbstractFixture implements OrderedFixtureInterfac
     public function load(ObjectManager $manager)
     {
         $names = [
+
             'A faire ',
             'En cours',
             'Terminées',
             'Bugs/retours',
+
 
         ];
         foreach ($names as $i => $name) {

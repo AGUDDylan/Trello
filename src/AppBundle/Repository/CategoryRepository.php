@@ -15,6 +15,7 @@ class CategoryRepository extends \Doctrine\ORM\EntityRepository
     public function getAll(){
         return $this->createQueryBuilder('c')
             ->select('c')
+            ->orderBy('c.id','ASC')
             ->getQuery()
             ->getResult();
 
