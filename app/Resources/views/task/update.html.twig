@@ -1,0 +1,20 @@
+{% extends "::base.html.twig" %}
+
+{%  block title 'Modifier la tâche' %}
+
+
+{% block content %}
+    <div class="container">
+
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+        {{ form_errors(form) }}
+
+        {{ form_widget(form, {'attr': {'class': 'form-group'}}) }}
+        <div class="form-group">
+
+            <input class="btn btn-default" type="submit" value="Envoyer">
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+

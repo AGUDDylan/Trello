@@ -45,16 +45,27 @@ class TaskController extends Controller
 
 
     /**
-     * @Route("/updatetask", name="app_task_update", methods={"GET","POST"})
+     * @Route("/updatetask/{id}", name="app_task_update", methods={"GET","POST"})
      *
      * @return \Symfony\Component\HttpFoundation\Response)
      */
 
 
-    public function updateAction(Request $request)
+    public function updateAction(Request $request, Task $task)
     {
-        $task=$this->get('app.task.manager')->create();
+        $tm = $this->get('app.task.manager');
+
         $form = $this->createForm(TaskType::class, $task);
+
+        if ($request->isMethod('POST')) {
+            $form->handleRequest($request);
+            if ($form->isValid()) {
+                $tm->save($task);
+
+                return $this->redirectToRoute('app_task_list');
+
+            }
+        }
 
 
 

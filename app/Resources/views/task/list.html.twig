@@ -13,10 +13,11 @@
             {% for  task in category.tasks %}
             <div class="panel panel-default">
                 <div class="panel-body">
+                    <a href={{  path('app_task_update', {'id':task.id}) }}><span class = "glyphicon glyphicon-pencil" ></span>  </a>
                     <h3> {{ task.name }}</h3>
                     <p> {{  task.description }} </p>
                     <p> <b> Statut : </b> {{ task.status }}</p>
-                    <a href={{  path('app_task_update') }}><span class = "glyphicon glyphicon-pencil" ></span>  </a>
+
                 </div>
             </div>
 

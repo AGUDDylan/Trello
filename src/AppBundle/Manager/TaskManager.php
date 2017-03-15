@@ -32,9 +32,20 @@ class TaskManager
 
     public function save(Task $task){
         $taskm = $this->entityManager;
-        $taskm->persist($task);
+        if(null == $task->getId()){
+            $taskm->persist($task);
+        }
+
         $taskm->flush();
     }
+
+
+
+
+
+
+
+
 
 
 
